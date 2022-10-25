@@ -1,0 +1,34 @@
+{
+  "name": "lib",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/lib/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nxext/vite:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/lib",
+        "configFile": "@nxext/vite/plugins/vite-package",
+        "frameworkConfigFile": "@nxext/react/plugins/vite",
+        "entryFile": "src/index.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/lib/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/lib"],
+      "options": {
+        "jestConfig": "packages/lib/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "lib": ["packages/lib/src/index.ts"]
+    }
+  }
+}
